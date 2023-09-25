@@ -1,0 +1,1 @@
+console.error(`while un numero N y muestre por la salida estándar todos los pares desde 2 `)
