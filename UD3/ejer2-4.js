@@ -5,4 +5,4 @@ let fechaActual=()=>{
     let fechaFormateada= fecha;
     document.write(fecha)
 }
-setTimeout(fechaActual,1000)
+setTimeout(fechaActual,1000);
