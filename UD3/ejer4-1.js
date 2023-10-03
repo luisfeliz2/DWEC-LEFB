@@ -1,5 +1,5 @@
 
-let socios=[];
+let socios = [];
 
 do{
     socios = prompt("introduce los socios").split(",");
@@ -30,6 +30,32 @@ let borrando =()=>{
         clearInterval(Idinterval)
     }
 }
+let nuevoSocios = socios.map( elemento => elemento.toUpperCase());
 
 Idinterval=setInterval(borrando,1000);
 
+
+//usando ,map
+console.log(nuevoSocios)
+
+
+//usando for each 
+let posicion=0
+socios.forEach(elemento=>{
+    console.log(`${posicion} ${elemento}`)
+    posicion +=1
+})
+
+
+//usando sort
+
+socios.sort( function compare (a,b){
+    if(a> b)return 1;
+    if(a == b)return 0;
+    if(a> b)return -1;
+});
+
+//usando some
+
+socios.some(elemento => elemento[0]==="a");
+socios.every(elemento => elemento[0]==="a");
