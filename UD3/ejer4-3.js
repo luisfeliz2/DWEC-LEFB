@@ -9,6 +9,7 @@ for(let i=0;i<size;i++){
     arrayAlumno[i]=prompt("Dime el nombre");
     arrayEdades[i]=prompt("Dime la Edad")
 }
+
 arrayAlumno.forEach,arrayEdades.forEach(a,b => {
     console.log(a)
 });

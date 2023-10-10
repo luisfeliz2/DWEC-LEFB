@@ -15,12 +15,45 @@ let edadSet = new Set([33,23,12]);
 const alumnos = new Map();
 
 // Función para insertar un nuevo alumno al array
-function insertarAlumno(nombre, edad) {
-  AlumnoNombre=prompt("dime el nombre");
-  AlumnoApellido=prompt("dime el apellido")
+function insertarAlumno() {
+  nombre=prompt("dime el nombre");
+  edad=parseInt(prompt("Dime la Edad"))
   alumnos.set(nombre,edad);
   
 }
 
+function listarAlumnos(){
 
-console.log(alumnos.get("luis")); // Muestra el array de alumnos
+  alumnos.forEach((edad,nombre) => {
+      console.log(`Nombre ${nombre} , edad ${edad}`)
+  });
+
+}
+function nombre(){
+  let nombre = prompt("Dime el nombre")
+  return nombre;
+}
+
+console.log(alumnos); // Muestra el array de alumnos
+
+function mediaEdad (){
+  let media=0;
+  let edades=0;
+  alumnos.forEach((edad)=>{
+    edades+=edad;
+    media+=edad/alumnos.size;
+  });
+  console.log(media)
+}
+
+function borrarNombre(){
+  let nombre = prompt("Dime el nombre")
+  alumnos.delete(nombre);
+  console.log(`Alumno ${nombre} ha sido borrado correctamente`)
+}
+function existeAlumno(){
+  let nombre = nombre()
+
+  
+  console.log("ds")
+}
