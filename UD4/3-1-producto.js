@@ -8,7 +8,11 @@ class Producto{
     }
 
 //
-
+    hola(){
+        Swal.fire(
+            'fsd'
+        )
+    }
     importe(){
         return this._unidades*this._precio;
     }
@@ -16,6 +20,9 @@ class Producto{
     toString(){
         return `Nombre :${this._nombre},Categoria: ${this._categoria},Unidades: ${this._unidades},
         Precio:${ this._precio}`;
+    }
+    valueOf(){
+        return this._precio;
     }
 
 
@@ -43,3 +50,4 @@ class Televisores extends Producto{
 }
 let tele= new Televisores("nokia TV 42","informatica",2,323,42)
 console.log(tele)
+hola()
