@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista">
+        <li>hola</li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <input type="button" value="" onclick="añadir()">
+    
+<script>
+function añadir() {
+    alert("fd")
+    //elemento creado
+    let ele = document.createElement("li");
+    ele.innerHTML("aaaaaaaa");
+
+    //recuperar padre
+    let padre = document.getElementById("lista");
+    
+    //añado al padre el hiho
+    padre.appendChild(ele);   
+}
+
+</script>
+
+</body>
+</html>
