@@ -169,8 +169,21 @@ function generarNumeroAleatorio(){
 	Al finalizar cada partida el nombre de todos los jugadores debe ser actualizado en el área de jugadores. No pueden aparecer nombres repetidos en el listado.
  *************************************************************/
 
+let jugadoresActual = document.getElementById("idNombreJugadores");
 
+let jugadores=new Set();
 
+function gestionJugadores(params) {
+	let jugador1 = document.getElementById("idInputNombreJ1");
+	let jugador2= document.getElementById("idInputNombreJ2")
+	jugadores.add(jugador1.value);
+	jugadores.add(jugador2.value);
+
+	jugadores.forEach(jugador=>{
+		jugadoresActual.innerHTML+=jugador+","
+	})
+	
+}
 /********************************************************
 *  APARTADO 4 : Gestión de resultados
 	-> Crear un array llamado resultados con información de todas las partidas. cada elemento del array debe tener la estructura:
