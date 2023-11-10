@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formularios en JavaScript</title>
   <script type="text/javascript" src="./eventos-ini.js" defer></script>
+  <link rel="stylesheet" href="style.css">
     
 </head>
 <body> 
@@ -13,29 +14,63 @@
   <form id="idFormulario" method="GET" action="#" >
       <!-- ÁREA de INPUT TEXT --> 
     <label for="nombre">Nombre: </label>
-    <input type="text" name="" id="nombre">
+    <input type="text" name="" id="nombre"><br>
+    <label for="password">Contraseña</label>
+    <input type="password" name="contrasenia" id="password">
+    <input type="text" value="formularioPrueba"hidden> <br>
+    <label for="edad">Edad: </label>
+    <input type="number" name="edad" id="edad"> <br>
+    <label for="color">Color Preferido</label>
+    <input type="color" name="color" id="color">
     <br>
     <br>
 
-      <!-- ÁREA de RadioButton  : si , no , nsnc -->    
+      <!-- ÁREA de RadioButton  : si , no , nsnc -->   
+      <label for="genero">Genero: </label>
+      <label for="h">H</label>
+      <input type="radio" name="genero" value="h" id="h"> 
+      <label for="m">M</label>
+      <input type="radio" name="genero" value="m" id="m"> 
+      <label for="o">O</label>
+      <input type="radio" name="genero" value="o" id="o"> 
     
     <br>
     <br>
 
     <!-- ÁREA de checkbox  : condiciones y privacidad -->   
-    
+    <label for="">Idiomas: </label>
+    <label for="es">ESPAÑOL</label>
+    <input type="checkbox" name="espaniol" id="es">
+    <label for="en">ENGLISH</label>
+    <input type="checkbox" name="english" id="en">
+    <label for="fr">FRANCE</label>
+    <input type="checkbox" name="france" id="fr">
     
     <br>
     <br>
 
     <!-- ÁREA de Select  : primer, segundo, tercer, cuarto -->   
-   
+    <label for="">Aficiones</label> <br>
+    <select name="aficiones" id="">
+      <option value="">  </option>
+      <option value="cantar">Cantar</option>
+      <option value="correr">Correr</option>
+      <option value="leer">Leer</option>
+    </select>
 
     <br>
     <br>
     
     <!-- ÁREA de input list + DataList : primer, segundo, tercer, cuarto --> 
-    
+    <label for="idListapeliculasPreferida">Peliculas Preferidas</label> <br>
+    <input type="text" list="idpeliculas" name="idListapeliculasPreferida" >
+    <datalist id="idpeliculas">
+
+      <option id="idPadrino" value="El padrino"></option>
+      <option id="idSpiderman" value="Spiderman"></option>
+      <option id="idMario" value="Mario Bros"></option>
+      <option value="El Lobo de wallstret"></option>
+    </datalist>
 
     <br>
     <br>

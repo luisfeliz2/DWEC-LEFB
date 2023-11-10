@@ -1,0 +1,9 @@
+#idFormulario{
+    background-color: darkgray;
+    width: 600px;
+    margin: auto;
+    height: 600px;
+    padding: 30px;
+    border-radius: 20px;
+    border: solid blue 10px;
+}
