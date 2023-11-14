@@ -13,10 +13,15 @@
 
   <form id="idFormulario" method="GET" action="#" >
       <!-- ÁREA de INPUT TEXT --> 
-    <label for="nombre">Nombre: </label>
-    <input type="text" name="" id="nombre"><br>
-    <label for="password">Contraseña</label>
-    <input type="password" name="contrasenia" id="password">
+    <label for="idNombre">Nombre: </label>
+    <input type="text" id="idNombre"><br>
+    <span id="idErrorNombre" class="error"></span>
+
+
+
+    <br>
+    <label for="idPassword">Contraseña</label>
+    <input type="password" name="contrasenia" id="idPassword" >
     <input type="text" value="formularioPrueba"hidden> <br>
     <label for="edad">Edad: </label>
     <input type="number" name="edad" id="edad"> <br>
@@ -26,7 +31,7 @@
     <br>
 
       <!-- ÁREA de RadioButton  : si , no , nsnc -->   
-      <label for="genero">Genero: </label>
+      
       <label for="h">H</label>
       <input type="radio" name="genero" value="h" id="h"> 
       <label for="m">M</label>
@@ -38,7 +43,7 @@
     <br>
 
     <!-- ÁREA de checkbox  : condiciones y privacidad -->   
-    <label for="">Idiomas: </label>
+    <label for="es">Idiomas: </label>
     <label for="es">ESPAÑOL</label>
     <input type="checkbox" name="espaniol" id="es">
     <label for="en">ENGLISH</label>
@@ -50,9 +55,9 @@
     <br>
 
     <!-- ÁREA de Select  : primer, segundo, tercer, cuarto -->   
-    <label for="">Aficiones</label> <br>
-    <select name="aficiones" id="">
-      <option value="">  </option>
+    <label for="idAficiones">Aficiones</label> <br>
+    <select name="aficiones" id="idAficiones">
+      <option value=""></option>
       <option value="cantar">Cantar</option>
       <option value="correr">Correr</option>
       <option value="leer">Leer</option>
@@ -63,9 +68,9 @@
     
     <!-- ÁREA de input list + DataList : primer, segundo, tercer, cuarto --> 
     <label for="idListapeliculasPreferida">Peliculas Preferidas</label> <br>
-    <input type="text" list="idpeliculas" name="idListapeliculasPreferida" >
-    <datalist id="idpeliculas">
-
+    <input type="text" id="idPeliculas" list="peliculas" name="idListapeliculasPreferida" >
+    
+    <datalist id="peliculas">
       <option id="idPadrino" value="El padrino"></option>
       <option id="idSpiderman" value="Spiderman"></option>
       <option id="idMario" value="Mario Bros"></option>
