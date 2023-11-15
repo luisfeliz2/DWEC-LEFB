@@ -24,7 +24,9 @@
     <input type="password" name="contrasenia" id="idPassword" >
     <input type="text" value="formularioPrueba"hidden> <br>
     <label for="edad">Edad: </label>
-    <input type="number" name="edad" id="edad"> <br>
+    
+    <input type="number" name="edad" id="idEdad"> <br>
+    <span id="edad" class="error"></span> <br>
     <label for="color">Color Preferido</label>
     <input type="color" name="color" id="color">
     <br>
@@ -79,7 +81,11 @@
 
     <br>
     <br>
-
+    
+    <textarea name="mensaje" id="idMensaje" cols="30" rows="10"></textarea>
+    <span id="idErrorMensaje" class="error"></span>
+    
+    <label for="idMensaje">Enviar Comentario</label> <br>
     <!-- <input id="idEnviar" type="button" value="Enviar"/> -->
        
     <input id="idEnviar" type="submit" value="Enviar"/>
