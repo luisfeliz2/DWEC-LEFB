@@ -18,7 +18,7 @@ function validarInformacion(e) {
 
     this.disabled = true;
     //limpio el contenido del span
-    if (validarAPIHTML(e) && validarJS(e) && confirm("¿Deseas enviar el formulario?")) {
+    if (validarAPIHTML(e) && confirm("¿Deseas enviar el formulario?")) {
 
         return true;
 
@@ -31,9 +31,8 @@ function validarInformacion(e) {
 
 function validarAPIHTML(e) {
 
-    console.log("Pendiente de implementar")
-
-    return true
+    return validarNombreHTML() && validarEdadHTML();
+  
 }
 
 function validarJS(e) {
@@ -105,4 +104,15 @@ function validarTextarea(params) {
 
     return true;
 
+}
+
+function validarNombreHTML(){
+    let inputNombre = formulario["idNombre"];
+
+    if (inputNombre.validity.valueMissing) {
+        let mensajeError="no puede estar en blanco"
+        inputNombre.className ="error";
+        inputNombre.focus();
+        
+    }
 }

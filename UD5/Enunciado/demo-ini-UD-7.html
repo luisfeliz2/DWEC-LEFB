@@ -14,7 +14,7 @@
   <form id="idFormulario" method="GET" action="#" >
       <!-- ÁREA de INPUT TEXT --> 
     <label for="idNombre">Nombre: </label>
-    <input type="text" id="idNombre"><br>
+    <input type="text" id="idNombre" required minlength="3" > <br>
     <span id="idErrorNombre" class="error"></span>
 
 
@@ -25,7 +25,7 @@
     <input type="text" value="formularioPrueba"hidden> <br>
     <label for="edad">Edad: </label>
     
-    <input type="number" name="edad" id="idEdad"> <br>
+    <input type="number" name="edad" min="3" max="80" id="idEdad"> <br>
     <span id="edad" class="error"></span> <br>
     <label for="color">Color Preferido</label>
     <input type="color" name="color" id="color">
