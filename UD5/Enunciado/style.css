@@ -10,3 +10,7 @@
 .error{
     background-color: red;
 }
+.errorInput{
+    border: red solid 3px;
+    
+}

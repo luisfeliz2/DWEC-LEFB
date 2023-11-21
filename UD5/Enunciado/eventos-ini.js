@@ -32,7 +32,7 @@ function validarInformacion(e) {
 function validarAPIHTML(e) {
 
     return validarNombreHTML() && validarEdadHTML();
-  
+
 }
 
 function validarJS(e) {
@@ -87,9 +87,9 @@ function validarNombre() {
 
 
 function validarTextarea(params) {
-    
+
     let textArea = formulario["idMensaje"].value
-    console.log(textArea+"dsfdsfdf-----------")
+    console.log(textArea + "dsfdsfdf-----------")
     let zonaError = document.getElementById("idMensaje")
 
     if (textArea = "") {
@@ -106,13 +106,13 @@ function validarTextarea(params) {
 
 }
 
-function validarNombreHTML(){
+function validarNombreHTML() {
     let inputNombre = formulario["idNombre"];
 
     if (inputNombre.validity.valueMissing) {
-        let mensajeError="no puede estar en blanco"
-        inputNombre.className ="error";
+        let mensajeError = "no puede estar en blanco"
+        inputNombre.classL = "errorInput";
         inputNombre.focus();
-        
+
     }
 }
