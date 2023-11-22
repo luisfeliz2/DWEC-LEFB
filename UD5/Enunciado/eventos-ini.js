@@ -108,7 +108,7 @@ function validarTextarea(params) {
 
 function validarNombreHTML() {
     let inputNombre = formulario["idNombre"];
-
+    
     if (inputNombre.validity.valueMissing) {
         let mensajeError = "no puede estar en blanco"
         inputNombre.classL = "errorInput";
