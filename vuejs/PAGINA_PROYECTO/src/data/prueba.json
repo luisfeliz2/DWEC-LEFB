@@ -1,0 +1,12 @@
+{"aficiones": [
+    { "id": "1", "nombre": "jugar football", "url_img": "https://png.pngtree.com/png-clipart/20210905/original/pngtree-boy-playing-football-png-image_6696040.jpg", "descripcion": "Practicar el fútbol en equipo y disfrutar del deporte." },
+    { "id": "2", "nombre": "tocar música", "url_img": "https://segurossura.com/content/uploads/sites/10/2017/05/seguros-sura-5-beneficios-de-aprender-a-tocar-un-instrumento-musical-imagen.jpg", "descripcion": "Crear melodías y expresar emociones a través de la música." },
+    { "id": "3", "nombre": "leer libros", "url_img": "https://us.123rf.com/450wm/rrraven/rrraven1711/rrraven171100052/90440803-a-la-ni%C3%B1a-le-encanta-leer-libros-vector-plano.jpg", "descripcion": "Sumergirse en mundos imaginarios y aprender de la literatura." },
+    { "id": "4", "nombre": "practicar senderismo", "url_img": "https://blog.walkaholic.me/wp-content/uploads/2018/10/Material-imprescindible-para-senderismo-825x510.jpg", "descripcion": "Explorar la naturaleza y disfrutar de la aventura al aire libre." },
+    { "id": "5", "nombre": "cocinar", "url_img": "https://mejorconsalud.as.com/wp-content/uploads/2018/07/trucos-cocina.jpg", "descripcion": "Preparar deliciosas comidas y experimentar en la cocina." },
+    { "id": "6", "nombre": "pintar", "url_img": "https://cdn.shopify.com/s/files/1/0189/7149/2452/files/pintar_al_oleo_480x480.jpg?v=1582817932", "descripcion": "Expresar la creatividad a través de la pintura y el arte visual." },
+    { "id": "7", "nombre": "jugar videojuegos", "url_img": "https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_noticia__small/public/media/2022/07/14/videojuegos_decisiones.jpg", "descripcion": "Sumergirse en mundos virtuales y disfrutar de la diversión digital." }
+  ]
+  
+  
+  }
