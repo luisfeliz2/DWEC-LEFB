@@ -27,10 +27,52 @@ function obtenerAficiones(){
 onMounted(() => {
   obtenerAficiones();
 });
-let imagen=ref(null)
+const imagen=ref(null)
 function verAficion(aficion) {
   console.log(aficion.nombre)
     imagen.value=aficion
+}
+function borrarAficion(aficion) {
+  if (confirm("Desea borrar")) {
+  
+    //paso 2: Enviar peticion axios de borrado(DELETE)
+
+    servicioAficiones
+  .delete(aficion.id)
+  .then((response) => {      
+      //paso 1: borrar elemento del array
+      aficiones.value=aficiones.value.filter((e)=> e.id !==aficion.id)
+      alert(`elemento borrado correctamente ${aficion.nombre}`)
+    })
+  .catch((error) => {
+      console.log(`problemas de conexion ${error}`);
+  });
+
+  }
+}
+
+let nombre = ref(null);
+let url_imagen = ref(null)
+let descripcion =ref(null)
+function hacerPOST(params) {
+  if (confirm("desea enviar todos los datos")) {
+    const datos ={
+      "nombre":nombre,
+      "url_img":url_imagen,
+      "descripcion":descripcion
+    }
+    servicioAficiones
+  .post(datos)
+  .then((response) => {      
+      
+    
+   
+    })
+  .catch((error) => {
+      console.log(`problemas de conexion ${error}`);
+  });
+    
+  }
 }
 
 
@@ -40,21 +82,22 @@ function verAficion(aficion) {
 <div class="padre">
     <h1>Página Listar</h1>
     <p>Página para listar</p>
+    <input type="text" placeholder="nombre" v-model="nombre"  >     <input placeholder="URL-IMAGEN" type="text" v-model="url_imagen">     <input placeholder="descripcion" v-model="descripcion" type="text">
+    <button @click="hacerPOST()" type="">Enviar</button>
     <ul>
-        <li v-for="(aficion, id) in aficiones" :key="id">
+        <li v-for="(aficion, id) in aficiones" :key="id" 
+        @dblclick="verAficion(aficion)" 
+        >
          
 
-            <span class="li-nombre" @click="verAficion(aficion)" >{{ aficion.nombre }}</span>
+            <span class="li-nombre" >{{ aficion.nombre }}</span>
             <span class="li-descripcion"> {{ aficion.descripcion }} </span>
-            <!-- <img :src="aficion.url_img" :alt="aficion.nombre"> -->
+            <button @click="borrarAficion(aficion)" type="">X</button>
+            <img :src="aficion.url_img" :alt="aficion.nombre">
             
         </li>
     </ul>
-
-</div>
-<div>
-  <img :src="imagen.url_img" alt="" >
-  
+    <!-- <img :src="imagen.url_" :alt="imagen.nombre" > -->
 </div>
 
 

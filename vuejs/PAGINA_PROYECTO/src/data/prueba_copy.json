@@ -1,6 +1,18 @@
 {
   "aficiones": [
     {
+      "id": "2",
+      "nombre": "tocar música",
+      "url_img": "https://segurossura.com/content/uploads/sites/10/2017/05/seguros-sura-5-beneficios-de-aprender-a-tocar-un-instrumento-musical-imagen.jpg",
+      "descripcion": "Crear melodías y expresar emociones a través de la música."
+    },
+    {
+      "id": "3",
+      "nombre": "leer libros",
+      "url_img": "https://us.123rf.com/450wm/rrraven/rrraven1711/rrraven171100052/90440803-a-la-ni%C3%B1a-le-encanta-leer-libros-vector-plano.jpg",
+      "descripcion": "Sumergirse en mundos imaginarios y aprender de la literatura."
+    },
+    {
       "id": "4",
       "nombre": "practicar senderismo",
       "url_img": "https://blog.walkaholic.me/wp-content/uploads/2018/10/Material-imprescindible-para-senderismo-825x510.jpg",
@@ -23,12 +35,6 @@
       "nombre": "jugar videojuegos",
       "url_img": "https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_noticia__small/public/media/2022/07/14/videojuegos_decisiones.jpg",
       "descripcion": "Sumergirse en mundos virtuales y disfrutar de la diversión digital."
-    },
-    {
-      "id": "4747"
-    },
-    {
-      "id": "51f6"
     }
   ]
 }
