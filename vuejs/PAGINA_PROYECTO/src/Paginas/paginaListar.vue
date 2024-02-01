@@ -1,6 +1,6 @@
 <script setup>
 import servicioAficiones from "../servicios/personal/servicioAficiones";
-import { ref, onMounted } from "vue";
+import { ref, onMounted,reactive } from "vue";
 
 // #############################################################
 // ################ VARIABLES A UTILIZAR
@@ -50,21 +50,21 @@ function borrarAficion(aficion) {
 
   }
 }
+let nuevaAficion=reactive(
+  {  nombre:"",
+  url_imagen:"",
+  descripcion:""
+});
 
-let nombre = ref(null);
-let url_imagen = ref(null)
-let descripcion =ref(null)
+
 function hacerPOST(params) {
   if (confirm("desea enviar todos los datos")) {
-    const datos ={
-      "nombre":nombre,
-      "url_img":url_imagen,
-      "descripcion":descripcion
-    }
+    
     servicioAficiones
-  .post(datos)
+  .post(nuevaAficion)
   .then((response) => {      
-      
+      console.log(nuevaAficion)
+      obtenerAficiones()
     
    
     })
@@ -82,7 +82,10 @@ function hacerPOST(params) {
 <div class="padre">
     <h1>Página Listar</h1>
     <p>Página para listar</p>
-    <input type="text" placeholder="nombre" v-model="nombre"  >     <input placeholder="URL-IMAGEN" type="text" v-model="url_imagen">     <input placeholder="descripcion" v-model="descripcion" type="text">
+    <form action="" method="post" @submit.prevent>
+      <input type="text" placeholder="nombre" v-model="nuevaAficion.nombre"  >     <input placeholder="URL-IMAGEN" type="text" v-model="nuevaAficion.url_imagen">     <input placeholder="descripcion" v-model="nuevaAficion.descripcion" type="text">
+    </form>
+    
     <button @click="hacerPOST()" type="">Enviar</button>
     <ul>
         <li v-for="(aficion, id) in aficiones" :key="id" 

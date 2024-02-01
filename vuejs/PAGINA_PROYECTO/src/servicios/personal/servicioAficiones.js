@@ -11,8 +11,8 @@ class serviciosAficiones {
     delete(id){
         return http.delete(`/aficiones/${id}`)
     }
-    post(d){
-        return http.post(`/aficiones/`)
+    post(aficion){
+        return http.post('/aficiones/',aficion)
     }
 }
 
