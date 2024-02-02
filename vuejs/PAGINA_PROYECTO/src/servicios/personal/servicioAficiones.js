@@ -14,6 +14,12 @@ class serviciosAficiones {
     post(aficion){
         return http.post('/aficiones/',aficion)
     }
+    findByNombre(nombre){
+        return http.get(`aficiones/?nombre=${nombre}`)
+    }
+    update(id,aficion){
+        return http.put(`aficiones/${id}`,aficion)
+    }
 }
 
 export default new serviciosAficiones();
