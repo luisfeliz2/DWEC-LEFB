@@ -127,10 +127,12 @@ function actualizar(aficion) {
     })
 }
 
-function editar2(aficion, f) {
+function editar2(aficion) {
   editar.value = !editar.value
+  
+
   nuevaAficionActualizada = aficion
-  console.log(f)
+
 
 
 }
@@ -160,7 +162,7 @@ function editar2(aficion, f) {
 
       </div>
 
-      <li v-for="(aficion, index) in aficiones" :key="index" @dblclick="verAficion(aficion)">
+      <li v-for="(aficion, id) in aficiones" :key="id" @dblclick="verAficion(aficion)">
 
 
         <span class="li-nombre">{{ aficion.nombre }}</span>
