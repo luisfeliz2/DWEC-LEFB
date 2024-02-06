@@ -56,7 +56,7 @@ let nuevaAficion = reactive(
     url_img: "",
     descripcion: ""
   });
-  let nuevaAficionActualizada = reactive(
+let nuevaAficionActualizada = reactive(
   {
     nombre: "",
     url_img: "",
@@ -74,7 +74,7 @@ function hacerPOST(params) {
     if (nuevaAficion.nombre !== "" && nuevaAficion.url_img !== "" && nuevaAficion.descripcion !== "") {
 
       servicioAficion(nuevaAficion)
-      
+
     } else {
       alert("no puede estar vacio ")
     }
@@ -85,51 +85,54 @@ function hacerPOST(params) {
 
 function servicioAficion(nuevaAficion) {
   servicioAficiones
-        .post(nuevaAficion)
-        .then((response) => {
-          console.log(nuevaAficion)
-          aficiones.value.push(response.data)
-          alert("añadido" + nuevaAficion.nombre)
-          console.log(response)
-          limpiar()
+    .post(nuevaAficion)
+    .then((response) => {
+      console.log(nuevaAficion)
+      aficiones.value.push(response.data)
+      alert("añadido" + nuevaAficion.nombre)
+      console.log(response)
+      limpiar()
 
-        })
-        .catch((error) => {
-          console.log(`problemas de conexion ${error}`);
-        });
+    })
+    .catch((error) => {
+      console.log(`problemas de conexion ${error}`);
+    });
 }
 
 let nombreBuscar = ref("");
 
 function filtrarNombre() {
   servicioAficiones
-  .findByNombre(nombreBuscar.value)
-  .then((res)=>{
-    aficiones.value=res.data
-  }) 
-  .catch((error) => {
+    .findByNombre(nombreBuscar.value)
+    .then((res) => {
+      aficiones.value = res.data
+    })
+    .catch((error) => {
       console.log(error);
     })
 }
-let editar=ref(false) 
-  
+let editar = ref(false)
+
 function actualizar(aficion) {
 
-  aficion=nuevaAficionActualizada
+  aficion = nuevaAficionActualizada
   servicioAficiones
-  .update(aficion.id,aficion)
+    .update(aficion.id, aficion)
 
-  .then(e=>{
-  
-    alert(e.data.nombre+"ah sido actualizada")
-    editar.value =! editar.value
-    console.log(e.statusText)
-  })
+    .then(e => {
+
+      alert(e.data.nombre + "ah sido actualizada")
+      editar.value = !editar.value
+      console.log(e.statusText)
+    })
 }
-function editar2(aficion) {
-  editar.value=!editar.value
-  nuevaAficionActualizada=aficion
-  
+
+function editar2(aficion, f) {
+  editar.value = !editar.value
+  nuevaAficionActualizada = aficion
+  console.log(f)
+
+
 }
 
 </script>
@@ -142,34 +145,40 @@ function editar2(aficion) {
       <input type="text" v-model="nombreBuscar">
       <input type="button" value="BUSCAR" @click.prevent="filtrarNombre()">
     </form>
-    
 
-  
+
+
     <ul>
-      <div class="editar" v-if="editar" >
-        <form action="" method="put"></form>
-        
-        <input type="text" placeholder="nombre" v-model="nuevaAficionActualizada.nombre"> <input placeholder="URL-IMAGEN" type="text"
-      v-model="nuevaAficionActualizada.url_img"> <input placeholder="descripcion" v-model="nuevaAficionActualizada.descripcion" type="text">
-      <button @click="actualizar()" type="">actualizar</button>
+      <div class="editar" v-if="editar">
+        <form action="" method="put">
+          <input type="text" placeholder="nombre" v-model="nuevaAficionActualizada.nombre">
+          <input placeholder="URL-IMAGEN" type="text" v-model="nuevaAficionActualizada.url_img">
+          <input placeholder="descripcion" v-model="nuevaAficionActualizada.descripcion" type="text">
+          <button @click.prevent="actualizar()" type="">actualizar</button>
+        </form>
+
+
       </div>
 
-      <li v-for="(aficion, id) in aficiones" :key="id" @dblclick="verAficion(aficion)">
+      <li v-for="(aficion, index) in aficiones" :key="index" @dblclick="verAficion(aficion)">
 
 
         <span class="li-nombre">{{ aficion.nombre }}</span>
         <span class="li-descripcion"> {{ aficion.descripcion }} </span>
         <button @click.prevent="borrarAficion(aficion)" type="">X</button>
-        <button @click.prevent="editar2(aficion)" type="">editar</button>
+        <button @click.prevent="editar2(aficion, index)" type="">editar</button>
         <img :src="aficion.url_img" :alt="aficion.nombre">
 
+      
+
       </li>
- 
+
     </ul>
     <form action="" method="post" @submit.prevent>
-      <input type="text" placeholder="nombre" v-model="nuevaAficion.nombre"> <input placeholder="URL-IMAGEN" type="text"
-      v-model="nuevaAficion.url_img"> <input placeholder="descripcion" v-model="nuevaAficion.descripcion" type="text">
-      <button @click="hacerPOST()" type="">Enviar</button>
+      <input type="text" placeholder="nombre" v-model="nuevaAficion.nombre">
+      <input placeholder="URL-IMAGEN" type="text" v-model="nuevaAficion.url_img">
+      <input placeholder="descripcion" v-model="nuevaAficion.descripcion" type="text">
+      <button @click.prevent="hacerPOST()" type="">Enviar</button>
     </form>
     <!-- <img :src="imagen.url_" :alt="imagen.nombre" > -->
   </div>
@@ -241,4 +250,5 @@ button:active,
 button:focus {
   color: #fff;
   background-color: black;
-}</style>
+}
+</style>
