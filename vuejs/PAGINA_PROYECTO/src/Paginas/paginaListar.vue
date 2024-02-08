@@ -49,7 +49,7 @@ function borrarAficion(aficion) {
       });
 
   }
-}
+} 
 let nuevaAficion = reactive(
   {
     nombre: "",
