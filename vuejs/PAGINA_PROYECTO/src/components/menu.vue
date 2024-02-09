@@ -4,11 +4,30 @@ import {ref} from "vue";
 const props = defineProps({
     "titulo":String,
     "links":Array,
-    "about":String
+    "about":String,
+    
 })
+
+let usuario = ref(localStorage.getItem("usuario")) 
+let mostrar=false
+if(usuario.value){
+    mostrar =!mostrar
+}
+function cerrarSecion(params) {
+    localStorage.removeItem("usuario")
+    mostrar =!mostrar
+    location.reload()
+}
 </script>
 
 <template> 
+<div>
+    <p>{{ usuario }}</p>
+
+    <form action="" method="post" v-if="mostrar" >
+        <input type="button" @click.prevent="cerrarSecion" value="cerrar sesion">
+    </form>
+</div>
     <nav>
         <RouterLink
          v-for="enlace in props.links"
