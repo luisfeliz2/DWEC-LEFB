@@ -32,10 +32,10 @@
       "url_imagen": "https://mejorconsalud.as.com/wp-content/uploads/2018/07/trucos-cocina.jpg"
     }
   ],
-
-  "usuarios":[
-  {
-
-  }
+  "usuarios": [
+    {
+      "id": "1",
+      "clave": "ccccccccc"
+    }
   ]
 }

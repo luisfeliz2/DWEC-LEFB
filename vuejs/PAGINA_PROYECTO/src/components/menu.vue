@@ -17,6 +17,7 @@ function cerrarSecion(params) {
     localStorage.removeItem("usuario")
     mostrar =!mostrar
     location.reload()
+
 }
 </script>
 

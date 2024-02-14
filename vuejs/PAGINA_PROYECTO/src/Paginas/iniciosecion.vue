@@ -1,20 +1,23 @@
-<script setup lang="ts">
-import { inject, reactive, ref } from "vue";
-import { createApp } from "vue";
-import VueCryptojs from "vue-cryptojs";
+<script setup>
+import { inject, reactive } from "vue";
+import servicioAficiones from "@/servicios/personal/servicioAficiones";
+
+import CryptoJS from "crypto-js";
+
+import bcrypt from "bcrypt";
+
 let usuarioc = reactive({
   usuario: "",
   contrasena: "",
 });
 
-import CryptoJS from "crypto-js";
-
-const cryptojs = inject("cryptojs") as typeof CryptoJS;
 function establecerUsuario(params) {
   localStorage.setItem("usuario", usuarioc.usuario);
-
   localStorage.setItem("contrasenia", usuarioc.contrasena);
-  alert(cryptojs.AES.encrypt("Hi There!", "Secret Passphrase").toString());
+
+  let token = "";
+  servicioAficiones.getUsuario(token).then();
+  //alert(cryptojs.AES.encrypt("Hi There!", "Secret Passphrase").toString());
 
   location.reload();
 }

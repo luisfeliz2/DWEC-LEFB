@@ -20,6 +20,13 @@ class serviciosAficiones {
     update(id,aficion){
         return http.put(`aficiones/${id}`,aficion)
     }
+    getUsuarios(){
+        return http.get("usuarios")
+    }
+    getUsuario(clave){
+        return http.get(`/aficiones/${clave}`)
+    }
+
 }
 
 export default new serviciosAficiones();
