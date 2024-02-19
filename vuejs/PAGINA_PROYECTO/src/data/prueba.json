@@ -34,8 +34,12 @@
   ],
   "usuarios": [
     {
-      "id": "1",
-      "clave": "ccccccccc"
+      "usuario":"luis",
+      "clave": "bHVpczEyMzQ="
+    },
+    {
+      "usuario":"mafalda",
+      "clave": "bWFmYWxkYQ=="
     }
   ]
 }

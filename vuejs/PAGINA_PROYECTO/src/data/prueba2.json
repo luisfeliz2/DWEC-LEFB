@@ -1,0 +1,41 @@
+{
+  "aficiones": [
+    {
+      "id": "4",
+      "nombre": "practicar senderismos",
+      "url_img": "https://blog.walkaholic.me/wp-content/uploads/2018/10/Material-imprescindible-para-senderismo-825x510.jpg",
+      "descripcion": "Explorar la naturaleza y disfrutar de la aventura al aire libre."
+    },
+    {
+      "id": "5",
+      "nombre": "cocinarssss",
+      "url_img": "https://mejorconsalud.as.com/wp-content/uploads/2018/07/trucos-cocina.jpg",
+      "descripcion": "Preparar deliciosas comidas y experimentar en la cocina."
+    },
+    {
+      "id": "6",
+      "nombre": "pintar",
+      "url_img": "https://cdn.shopify.com/s/files/1/0189/7149/2452/files/pintar_al_oleo_480x480.jpg?v=1582817932",
+      "descripcion": "Expresar la creatividad a través de la pintura y el arte visual."
+    },
+    {
+      "id": "7",
+      "nombre": "jugar videojuegos",
+      "url_img": "https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_noticia__small/public/media/2022/07/14/videojuegos_decisiones.jpg",
+      "descripcion": "Sumergirse en mundos virtuales y disfrutar de la diversión digital."
+    },
+    {
+      "id": "9b8d",
+      "nombre": "ccc",
+      "url_img": "https://mejorconsalud.as.com/wp-content/uploads/2018/07/trucos-cocina.jpg",
+      "descripcion": "ddd",
+      "url_imagen": "https://mejorconsalud.as.com/wp-content/uploads/2018/07/trucos-cocina.jpg"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "clave": "ccccccccc"
+    }
+  ]
+}

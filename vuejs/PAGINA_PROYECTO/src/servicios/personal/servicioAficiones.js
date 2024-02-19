@@ -23,8 +23,8 @@ class serviciosAficiones {
     getUsuarios(){
         return http.get("usuarios")
     }
-    getUsuario(clave){
-        return http.get(`/aficiones/${clave}`)
+    findByUsuario(clave){
+        return http.get(`/usuarios?clave=${clave}`)
     }
 
 }

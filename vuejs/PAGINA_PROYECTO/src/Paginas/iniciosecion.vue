@@ -1,10 +1,10 @@
 <script setup>
 import { inject, reactive } from "vue";
 import servicioAficiones from "@/servicios/personal/servicioAficiones";
+import { useRouter } from "vue-router";
 
-import CryptoJS from "crypto-js";
 
-import bcrypt from "bcrypt";
+const rutas = useRouter();
 
 let usuarioc = reactive({
   usuario: "",
@@ -12,7 +12,34 @@ let usuarioc = reactive({
 });
 
 function establecerUsuario(params) {
-  localStorage.setItem("usuario", usuarioc.usuario);
+
+  if (usuarioc.usuario !== "") {
+    servicioAficiones.findByUsuario(window.btoa(usuarioc.usuario+usuarioc.contrasena)).then(
+    (response)=>{
+
+      if(response.data.length===0){
+        alert("el usario no existe")
+      localStorage.setItem("usuario",null);
+      }else{
+        alert("bienvenido")
+        localStorage.setItem("usuario", usuarioc.usuario);
+
+        rutas.go();
+
+      }
+     
+
+    }
+    ).catch(
+
+    )
+    
+  }
+
+
+
+
+
   localStorage.setItem("contrasenia", usuarioc.contrasena);
 
   let token = "";
@@ -20,6 +47,12 @@ function establecerUsuario(params) {
   //alert(cryptojs.AES.encrypt("Hi There!", "Secret Passphrase").toString());
 
   location.reload();
+}
+function cerrarSecion(params) {
+    localStorage.removeItem("usuario")
+
+    location.reload()
+
 }
 </script>
 
@@ -44,12 +77,15 @@ function establecerUsuario(params) {
         name="password"
         id="password"
         v-model="usuarioc.contrasena"
-        class="form-input"
+        class="form-input "
         placeholder="Ingresa tu contraseña"
       />
     </div>
     <button @click.prevent="establecerUsuario" class="btn-submit">
       Iniciar Sesión
+    </button>
+    <button @click.prevent="cerrarSecion" class="btn-submit">
+      Cerrar sesion
     </button>
   </form>
 </template>

@@ -13,12 +13,7 @@ let mostrar=false
 if(usuario.value){
     mostrar =!mostrar
 }
-function cerrarSecion(params) {
-    localStorage.removeItem("usuario")
-    mostrar =!mostrar
-    location.reload()
-
-}
+1234
 </script>
 
 <template> 
