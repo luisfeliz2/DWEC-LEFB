@@ -1,7 +1,32 @@
 <script setup>
 import servicioAficiones from "../servicios/personal/servicioAficiones";
 import { ref, onMounted, reactive } from "vue";
+import Swal from "sweetalert2";
 
+// Swal.fire({
+//   icon:"success",
+//   title:"Ooops...",
+//   text:"errrrorrrrr"
+
+// })
+
+function correcta(mensaje) {
+  Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: mensaje,
+  showConfirmButton: false,
+  timer: 1500
+});
+}
+function error(mensaje) {
+  Swal.fire({
+  icon: "error",
+  title: "Oops...",
+  text: mensaje,
+  footer: '<a href="#">Why do I have this issue?</a>'
+});
+}
 // #############################################################
 // ################ VARIABLES A UTILIZAR
 
@@ -9,6 +34,9 @@ let aficiones = ref(null)
 
 // #############################################################
 // ################ FUNCIONES DE GESTIÓN DE SERVIVIOS
+
+
+
 
 function obtenerAficiones() {
   servicioAficiones
@@ -42,10 +70,12 @@ function borrarAficion(aficion) {
       .then((response) => {
         //paso 1: borrar elemento del array
         aficiones.value = aficiones.value.filter((e) => e.id !== aficion.id)
-        alert(`elemento borrado correctamente ${aficion.nombre}`)
+       // alert()
+        correcta(`elemento borrado correctamente ${aficion.nombre}`)
       })
       .catch((error) => {
-        console.log(`problemas de conexion ${error}`);
+        //console.log(`problemas de conexion ${error}`);
+        error(`problemas de conexion ${error}`)
       });
 
   }
@@ -113,18 +143,49 @@ function filtrarNombre() {
 }
 let editar = ref(false)
 
+function mostrarConfirmacion(aficion) {
+  return Swal.fire({
+    title: "¿Desea guardar los cambios?",
+    showDenyButton: true,
+    showCancelButton: true,
+    confirmButtonText: "Guardar",
+    denyButtonText: "No guardar"
+  });
+}
+
+function mostrarMensajeGuardado(nombre) {
+  Swal.fire("¡Guardado!", `${nombre} ha sido actualizada`, "success");
+}
+
+function mostrarMensajeNoGuardado() {
+  Swal.fire("Cambios no guardados", "", "info");
+}
+
+function mostrarError() {
+  Swal.fire("Error", "Ha ocurrido un error al actualizar la afición", "error");
+}
+
 function actualizar(aficion) {
-
-  aficion = nuevaAficionActualizada
-  servicioAficiones
-    .update(aficion.id, aficion)
-
-    .then(e => {
-
-      alert(e.data.nombre + "ah sido actualizada")
-      editar.value = !editar.value
-      console.log(e.statusText)
-    })
+  aficion=nuevaAficionActualizada
+  mostrarConfirmacion().then((result) => {
+    if (result.isConfirmed) {
+      servicioAficiones
+        .update(aficion.id, aficion)
+        .then(e => {
+          mostrarMensajeGuardado(e.data.nombre);
+          editar.value = !editar.value;
+          console.log(e.statusText);
+        })
+        .catch(error => {
+          mostrarError();
+          console.error(error);
+        });
+    } else if (result.isDenied) {
+     
+      mostrarMensajeNoGuardado();
+    
+    }
+  });
 }
 
 function editar2(aficion) {

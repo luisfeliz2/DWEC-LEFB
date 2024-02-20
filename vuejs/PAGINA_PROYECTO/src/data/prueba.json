@@ -1,14 +1,8 @@
 {
   "aficiones": [
     {
-      "id": "4",
-      "nombre": "practicar senderismos",
-      "url_img": "https://blog.walkaholic.me/wp-content/uploads/2018/10/Material-imprescindible-para-senderismo-825x510.jpg",
-      "descripcion": "Explorar la naturaleza y disfrutar de la aventura al aire libre."
-    },
-    {
       "id": "5",
-      "nombre": "cocinarssss",
+      "nombre": "cocinarsssss",
       "url_img": "https://mejorconsalud.as.com/wp-content/uploads/2018/07/trucos-cocina.jpg",
       "descripcion": "Preparar deliciosas comidas y experimentar en la cocina."
     },
@@ -34,12 +28,14 @@
   ],
   "usuarios": [
     {
-      "usuario":"luis",
-      "clave": "bHVpczEyMzQ="
+      "usuario": "luis",
+      "clave": "bHVpczEyMzQ=",
+      "id": "0c4f"
     },
     {
-      "usuario":"mafalda",
-      "clave": "bWFmYWxkYQ=="
+      "usuario": "mafalda",
+      "clave": "bWFmYWxkYQ==",
+      "id": "d55c"
     }
   ]
 }
