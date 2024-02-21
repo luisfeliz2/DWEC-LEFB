@@ -14,6 +14,3 @@ import { ref } from 'vue'
   
 </template>
 
-<style>
-
-</style>

@@ -12,14 +12,16 @@ let usuarioc = reactive({
 });
 
 function establecerUsuario(params) {
+alert("daskijddsaesdkbjj")
 
   if (usuarioc.usuario !== "") {
     servicioAficiones.findByUsuario(window.btoa(usuarioc.usuario+usuarioc.contrasena)).then(
     (response)=>{
-
+      console.log(response)
+    console.log("--------------------------")
       if(response.data.length===0){
         alert("el usario no existe")
-      localStorage.setItem("usuario",null);
+        localStorage.setItem("usuario",null);
       }else{
         alert("bienvenido")
         localStorage.setItem("usuario", usuarioc.usuario);
@@ -30,9 +32,10 @@ function establecerUsuario(params) {
      
 
     }
-    ).catch(
-
-    )
+    ).catch((error) => {
+        //console.log(`problemas de conexion ${error}`);
+        error(`problemas de conexion ${error}`)
+      });
     
   }
 
@@ -42,15 +45,15 @@ function establecerUsuario(params) {
 
   localStorage.setItem("contrasenia", usuarioc.contrasena);
 
-  let token = "";
-  servicioAficiones.getUsuario(token).then();
+  // let token = "";
+  // servicioAficiones.getUsuario(token).then();
   //alert(cryptojs.AES.encrypt("Hi There!", "Secret Passphrase").toString());
 
   location.reload();
 }
 function cerrarSecion(params) {
     localStorage.removeItem("usuario")
-
+// rutas.go()
     location.reload()
 
 }

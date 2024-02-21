@@ -2,16 +2,12 @@
 import { inject, reactive } from "vue";
 import servicioAficiones from "@/servicios/personal/servicioAficiones";
 
-import CryptoJS from "crypto-js";
-
-import bcrypt from "bcrypt";
-
 let usuarioc = reactive({
   usuario: "",
   contrasena: "",
 });
 
-function establecerUsuario(params) {
+function establecerUsuario() {
   localStorage.setItem("usuario", usuarioc.usuario);
   localStorage.setItem("contrasenia", usuarioc.contrasena);
 
@@ -28,25 +24,13 @@ function establecerUsuario(params) {
   <form action="" method="post" class="login-form">
     <div class="form-group">
       <label for="username" class="form-label">Nombre de Usuario:</label>
-      <input
-        type="text"
-        name="username"
-        v-model="usuarioc.usuario"
-        id="username"
-        class="form-input"
-        placeholder="Ingresa tu nombre de usuario"
-      />
+      <input type="text" name="username" v-model="usuarioc.usuario" id="username" class="form-input"
+        placeholder="Ingresa tu nombre de usuario" />
     </div>
     <div class="form-group">
       <label for="password" class="form-label">Contraseña:</label>
-      <input
-        type="password"
-        name="password"
-        id="password"
-        v-model="usuarioc.contrasena"
-        class="form-input"
-        placeholder="Ingresa tu contraseña"
-      />
+      <input type="password" name="password" id="password" v-model="usuarioc.contrasena" class="form-input"
+        placeholder="Ingresa tu contraseña" />
     </div>
     <button @click.prevent="establecerUsuario" class="btn-submit">
       Iniciar Sesión

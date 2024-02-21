@@ -2,7 +2,7 @@
   "aficiones": [
     {
       "id": "5",
-      "nombre": "cocinarsssss",
+      "nombre": "cocinars",
       "url_img": "https://mejorconsalud.as.com/wp-content/uploads/2018/07/trucos-cocina.jpg",
       "descripcion": "Preparar deliciosas comidas y experimentar en la cocina."
     },
@@ -17,13 +17,6 @@
       "nombre": "jugar videojuegos",
       "url_img": "https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_noticia__small/public/media/2022/07/14/videojuegos_decisiones.jpg",
       "descripcion": "Sumergirse en mundos virtuales y disfrutar de la diversión digital."
-    },
-    {
-      "id": "9b8d",
-      "nombre": "ccc",
-      "url_img": "https://mejorconsalud.as.com/wp-content/uploads/2018/07/trucos-cocina.jpg",
-      "descripcion": "ddd",
-      "url_imagen": "https://mejorconsalud.as.com/wp-content/uploads/2018/07/trucos-cocina.jpg"
     }
   ],
   "usuarios": [

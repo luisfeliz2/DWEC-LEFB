@@ -15,6 +15,18 @@ const router = createRouter({
         {   path: '/listado', 
             name:'listar',
             component: paginaListar
+            // ,
+            // beforeEnter:(to,from,next)=>{
+            //     let usuario= localStorage.getItem("usuario")
+
+            //     if (usuario!=null) {
+            //         next()
+            //     } else {
+            //         next("/inicio")
+                  
+                    
+            //     }
+            // }
         }, 
 
         {

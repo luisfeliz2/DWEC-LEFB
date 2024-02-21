@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink} from 'vue-router';
 import {ref} from "vue";
+
 const props = defineProps({
     "titulo":String,
     "links":Array,
@@ -13,7 +14,12 @@ let mostrar=false
 if(usuario.value){
     mostrar =!mostrar
 }
-1234
+
+function cerrarSecion(params) {
+    localStorage.removeItem("usuario")
+    
+    
+}
 </script>
 
 <template> 
